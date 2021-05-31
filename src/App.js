@@ -8,62 +8,40 @@ import {
     Link
 } from "react-router-dom";
 
-import Technicien from "./technicien/Technicien";
+import Technicien from "./technicien/main/Technicien";
+import DetailsRapport from "./technicien/detailsRapport/DetailsRapport";
+import SplashScreen from "./splash/SplashScreen";
+import HomePage from "./LandingPage/HomePage";
+import Footer from "./footer/Footer";
 
 
 
 function App(){
-    const id = "OK";
     return (
-        <Router>
-            <Switch>
-                <Route exact={true} path="/">
-                    <SplashScreen/>
-                </Route>
-                <Route path="/tech" >
-                    <Technicien/>
-                </Route>
-                <Route path="/hello">
-                    <div>
-                        <h3>OK</h3>
-                    </div>
-                </Route>
-            </Switch>
-        </Router>
+        <div>
+            <Router>
+                <Switch>
+                    <Route exact={true} path="/">
+                        <HomePage/>
+                    </Route>
+                    <Route path="/tech" exact={true}>
+                        <Technicien/>
+                    </Route>
+                    <Route path="/tech/:idRapport" >
+                        <DetailsRapport/>
+                    </Route>
+                    <Route path="/hello">
+                        <div>
+                            <h3>OK</h3>
+                        </div>
+                    </Route>
+                </Switch>
+            </Router>
+            <Footer/>
+        </div>
     )
 }
 
 
-function SplashScreen() {
-    // eslint-disable-next-line no-undef
-    let [message, setMessage] = useState("");
-
-    function connectToServer() {
-        const axios = require('axios');
-        axios.get("http://localhost:8080/Hello").then(res => {
-            changeMsg("Message recu du back end : \""+res.data+"\"");
-        },err=>{
-            changeMsg("Back end n'est pas accessible");
-        })
-    }
-    function changeMsg(res){
-        setMessage(res);
-    }
-
-    return (
-        <div>
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Press the button to request a hello from the server
-                </p>
-                <button className="button" onClick={connectToServer}>
-                    LOAD
-                </button>
-                <p>{message}</p>
-            </header>
-        </div>
-    );
-}
 
 export default App;

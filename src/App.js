@@ -10,9 +10,9 @@ import {
 
 import Technicien from "./technicien/main/Technicien";
 import DetailsRapport from "./technicien/detailsRapport/DetailsRapport";
-import SplashScreen from "./splash/SplashScreen";
 import HomePage from "./LandingPage/HomePage";
 import Footer from "./footer/Footer";
+import HeaderTechnicien from "./technicien/HeaderTechnicien";
 
 
 
@@ -25,6 +25,7 @@ function App(){
                         <HomePage/>
                     </Route>
                     <Route path="/tech" exact={true}>
+                        <HeaderTechnicien/>
                         <Technicien/>
                     </Route>
                     <Route path="/tech/:idRapport" >

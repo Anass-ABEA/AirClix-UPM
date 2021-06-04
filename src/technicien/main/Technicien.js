@@ -146,7 +146,7 @@ export default function Technicien() {
             responsable: "Allal AHMADI",
             address: "130, Rabat Agdal, Rabat",
             fileName: "N/A",
-            state: 1
+            state: 0
 
         },
         {
@@ -350,7 +350,7 @@ export default function Technicien() {
                                 <strong>Prochaine Intervention</strong>
                             </div>
                             <h5>
-                                {moment(new Date(overView.next)).fromNow()}
+                                {moment().from(new Date(overView.next))}
                             </h5>
                         </div>
                     </div>

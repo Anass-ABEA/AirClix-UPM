@@ -1,0 +1,35 @@
+.header-parent{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background: white;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px grey;
+}
+
+.logo img{
+  height: 70px;
+}
+
+.header-parent .buttons{
+  flex :1;
+  align-self: center;
+  text-align: center;
+}
+
+.header-parent .buttons button{
+  margin: 0 10px;
+}
+
+.profile{
+  align-self: center;
+}
+
+.header-parent .buttons .btn{
+
+  display: inline-grid;
+  text-align: -webkit-center;
+}
+.profilePic .btn .icon{
+  margin: 0 7px;
+}
